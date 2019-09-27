@@ -2399,6 +2399,21 @@
             </File>
           </Files>
         </Group>
+        <Group>
+          <GroupName>PlatformHandler</GroupName>
+          <Files>
+            <File>
+              <FileName>PlatformHandler.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>.\PlatformHandler.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>PlatformHandler.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\PlatformHandler.h</FilePath>
+            </File>
+          </Files>
+        </Group>
       </Groups>
     </Target>
   </Targets>

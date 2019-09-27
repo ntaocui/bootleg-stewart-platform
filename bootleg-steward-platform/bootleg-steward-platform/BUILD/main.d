@@ -177,3 +177,4 @@
 .\build\main.o: mbed\platform/mbed_stats.h
 .\build\main.o: mbed\platform/ScopedLock.h
 .\build\main.o: Servo\Servo.h
+.\build\main.o: PlatformHandler.h
