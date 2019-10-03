@@ -1,0 +1,14 @@
+# ignored file types
+*.html
+*.lib
+*.o 
+
+# ignored files
+
+bootleg-steward-platform.uvguix.Naitao
+bootleg-steward-platform.uvoptx
+bootleg-steward-platform.uvprojx
+
+# ignored folders
+
+BUILD/
