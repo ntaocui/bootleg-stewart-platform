@@ -3,12 +3,12 @@
 #include "Servo.h"
 #include "PlatformHandler.h"
 
-Servo myservo1(D3);
-Servo myservo2(D5);
-Servo myservo3(D6);
-Servo myservo4(D9);
-Servo myservo5(D10);
-Servo myservo6(D11);
+//Servo myservo1(D3);
+//Servo myservo2(D5);
+//Servo myservo3(D6);
+//Servo myservo4(D9);
+//Servo myservo5(D10);
+//Servo myservo6(D11);
 
 int main() {
 	while(1){
