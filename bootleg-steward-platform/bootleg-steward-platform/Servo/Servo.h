@@ -63,7 +63,7 @@ public:
      */
 		 
 		 // range corresponds to the pwm ranges of the motor, needs to be unique for each motor
-    void calibrate(float range = 0.001, float degrees = 90.0); 
+    void calibrate(float range = 0.001, float degrees = 90.0, float centrePulse = 0.0015, bool inversion = true); 
         
     /**  Shorthand for the write and read functions */
     Servo& operator= (float percent);
@@ -72,9 +72,11 @@ public:
 
 protected:
     PwmOut _pwm;
+		bool _inversion;
     float _range;
     float _degrees;
     float _p;
+		float _centrePulse;
 };
 
 #endif

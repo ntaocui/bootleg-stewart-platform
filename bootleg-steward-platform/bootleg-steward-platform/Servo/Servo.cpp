@@ -23,13 +23,18 @@ void Servo::write(float percent) {
 }
 
 void Servo::position(float degrees) {
+		if(_inversion){
+			degrees = -degrees;
+		}
     float offset = _range * (degrees / _degrees);
-    _pwm.pulsewidth(0.0015 + clamp(offset, -_range, _range));
+    _pwm.pulsewidth(_centrePulse + clamp(offset, -_range, _range));
 }
 
-void Servo::calibrate(float range, float degrees) {
+void Servo::calibrate(float range, float degrees, float centrePulse, bool inversion) {
+		_inversion = inversion;
     _range = range;
     _degrees = degrees;
+		_centrePulse = centrePulse;
 }
 
 float Servo::read() {
