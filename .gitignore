@@ -1,7 +1,6 @@
 # ignored file types
 *.html
-*.lib
-*.o 
+*.lib 
 
 # ignored files
 
