@@ -3,21 +3,34 @@
 #include "Servo.h"
 //#include "PlatformHandler.h"
 
-#include "USBSerial.h"
- 
-//Virtual serial port over USB
-USBSerial serial;
+#include "mbed.h"
+
 Serial pc(USBTX, USBRX);
- 
-int main(void) {
-    uint8_t buf[128];
-    while(1)
-    {
-        serial.scanf("%s", buf);
-        serial.printf("recv: %s", buf);
-        pc.printf("recv: %s\r\n", buf);
+
+int main() {
+    pc.printf("Testing....\r\n");
+		char command;
+    while(1) {
+				command = ' ';
+        command = (char)pc.getc();
+				if(command == 'a'){
+					pc.printf("holding a...\r\n");
+				}
+				else if(command == 'w'){
+					pc.printf("holding w...\r\n");
+				}
+				else if(command == 's'){
+					pc.printf("holding s...\r\n");
+				}
+				else if(command == 'd'){
+					pc.printf("holding d...\r\n");
+				}
+				else if(command == ' '){
+					pc.printf("returning to zero..\r\n");
+				}
     }
 }
+
 /*
 Servo myservo1(D3);
 Servo myservo2(D5);
