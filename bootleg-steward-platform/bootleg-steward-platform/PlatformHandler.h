@@ -1,28 +1,30 @@
 // September 27th 2019
 #include "servo.h"
-//#include "constants.h"
 #include "mbed.h"
 #include <vector>
+#include <map>
 
-//Servo myservo1(D3);
-//Servo myservo2(D5);
-//Servo myservo3(D6);
-//Servo myservo4(D9);
-//Servo myservo5(D10);
-//Servo myservo6(D11);
+enum Position {Left, Right, Forward, Back};
 
-class platformHandler{
+class PlatformHandler{
 
 public:
-	platformHandler();
-	~platformHandler();
+	PlatformHandler();
+	~PlatformHandler();
 
 	void calibrateMotors();
 	void zeroMotors();
+	void goToPosition(Position pos);
 
 private:
-	std::vector<Servo> _servo;	
-	
+	Servo _servo1;
+	Servo _servo2;
+	Servo _servo3;
+	Servo _servo4;
+	Servo _servo5;
+	Servo _servo6;
+
+std::map<Position, std::vector<float> > _positionMapping;
 };
 	
 
