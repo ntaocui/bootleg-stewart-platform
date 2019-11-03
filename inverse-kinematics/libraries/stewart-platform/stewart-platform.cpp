@@ -1,4 +1,4 @@
-#include "StewartPlatform.h"
+#include "stewart-platform.h"
 
 
 StewartPlatform::StewartPlatform(): baseJoint{ { } }
@@ -138,6 +138,16 @@ void StewartPlatform::getServoPosition(const point_t transl, const point_t rotat
 	calcLegLength();
 	calcAlpha();
 	calcServoPos(servoPos);
+}
+
+float StewartPlatform::constrain(float value, float min, float max) {
+	if(value < min) {
+		return min;
+	} else if(value > max) {
+		return max;
+	} else {
+		return value;
+	}
 }
 
 void StewartPlatform::calcServoPos(float servoPos[6]) {

@@ -38,8 +38,8 @@
 
 
 #include <math.h>
-#include "Arduino.h"
-#include "Config.h"
+// #include "Arduino.h"
+#include "config.h"
 
 typedef struct point_s {
 	float x;
@@ -70,6 +70,7 @@ private:
 	void calcLegLength();
 	void calcAlpha();
 	void calcServoPos(float[6]);
+	float constrain(float value, float minVal, float maxVal);
 
 };
 
