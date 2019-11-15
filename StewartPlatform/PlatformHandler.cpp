@@ -9,12 +9,12 @@ PlatformHandler::~PlatformHandler(){
 }
 
 void PlatformHandler::calibrateMotors() {
-  _servo[0].attach(3, 600, 1150);  
-  _servo[1].attach(5);
-  _servo[2].attach(6);
-  _servo[3].attach(9);
-  _servo[4].attach(10);
-  _servo[5].attach(11);
+  _servo[0].attach(3, 670, 2625);  // (pin #, how far the "0" degree position reaches; the lower, the further it goes, how far the "180" degree position goes; the greater, the further it goes)
+  _servo[1].attach(5, 410, 2360);
+  _servo[2].attach(6, 500, 2390);
+  _servo[3].attach(9, 678, 2225);
+  _servo[4].attach(10, 480, 2420);
+  _servo[5].attach(11, 650, 2300);
 }
 
 void PlatformHandler::goToPosition(point_t translation, point_t rotation){
