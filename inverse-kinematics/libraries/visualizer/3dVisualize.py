@@ -1,39 +1,43 @@
 #https://stackoverflow.com/questions/34376656/matplotlib-create-real-time-animated-graph
 
+#With Serial Input
+#http://www.toptechboy.com/tutorial/python-with-arduino-lesson-11-plotting-and-graphing-live-data-from-arduino-with-matplotlib/
+
 import random
 import time
 import serial
-import numpy
+import numpy as np
+
 
 from matplotlib import pyplot as plt
 from matplotlib import animation
+from mpl_toolkits.mplot3d import Axes3D
 
 
-class RegrMagic(object):
-    """Mock for function Regr_magic()
-    """
-    def __init__(self):
-        self.x = 0
-    def __call__(self):
-        time.sleep(random.random())
-        self.x += 1
-        return self.x, random.random()
 
-regr_magic = RegrMagic()
-
-def frames():
-    while True:
-        yield regr_magic()
-
-fig = plt.figure()
-
-x = []
-y = []
-def animate(args):
-    x.append(args[0])
-    y.append(args[1])
-    return plt.plot(x, y, color='g')
+def update_lines(num):
+    dx, dy, dz = np.random.random((3,)) * 255 * 2 - 255  # replace this line with code to get data from serial line
+    text.set_text("{:d}: [{:.0f},{:.0f},{:.0f}]".format(num, dx, dy, dz))  # for debugging
+    x.append(dx)
+    y.append(dy)
+    z.append(dz)
+    graph._offsets3d = (x, y, z)
+    return graph,
 
 
-anim = animation.FuncAnimation(fig, animate, frames=frames, interval=1000)
+x = [0]
+y = [0]
+z = [0]
+
+fig = plt.figure(figsize=(5, 5))
+ax = fig.add_subplot(111, projection="3d")
+graph = ax.scatter(x, y, z, color='orange')
+text = fig.text(0, 1, "TEXT", va='top')  # for debugging
+
+ax.set_xlim3d(-255, 255)
+ax.set_ylim3d(-255, 255)
+ax.set_zlim3d(-255, 255)
+
+# Creating the Animation object
+ani = animation.FuncAnimation(fig, update_lines, frames=200, interval=50, blit=False)
 plt.show()
