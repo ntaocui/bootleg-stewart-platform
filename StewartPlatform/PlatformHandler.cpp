@@ -29,8 +29,8 @@ void PlatformHandler::goToPosition(point_t translation, point_t rotation){
   Serial.println(servosPos[5]);
 
 //  TODO: do this mapping properly, will need to alter calibrations as well
-  _servo[0].write(servosPos[5])
-  _servo[1].write(servosPos[0]);;
+  _servo[0].write(servosPos[5]);
+  _servo[1].write(servosPos[0]);
   _servo[2].write(servosPos[1]);
   _servo[3].write(servosPos[2]);
   _servo[4].write(servosPos[3]);
