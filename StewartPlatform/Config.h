@@ -34,6 +34,5 @@
 #define THETA_ANGLE ((PI/3.0 - THETA_P_ANGLE) / 2.0)
 /* Here you put the rotation of servo arms in respect to axis X */
 #define BETA_ANGLES PI / 2, -PI / 2, -PI / 6, 5 * PI / 6, -5 * PI / 6, PI / 6
-//#define BETA_ANGLES PI / 3, 0, PI, 2 * PI / 3, -PI / 3, -2 * PI / 3
-//#define BETA_ANGLES 0, PI, 2 * PI / 3, -PI / 3, -2 * PI / 3, PI / 3,
+
 #endif // _CONFIG_H

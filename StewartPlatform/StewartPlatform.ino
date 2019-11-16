@@ -27,13 +27,4 @@ void loop() {
   platform.goToPosition(translation, rotation);
   delay(5000);
   Serial.println("");
-//  translation.x = 0;
-//  translation.y = 0;
-//  translation.z = 10;
-//  rotation.x = 0;
-//  rotation.y = 0;
-//  rotation.z = 0;
-//  platform.goToPosition(translation, rotation);
-//  delay(5000);
-//  Serial.println("");
 }
