@@ -9,5 +9,5 @@
 # bootleg-steward-platform.uvprojx
 
 # ignored folders
-
+/inverse-kinematics/libraries/visualizer/visualization_env/
 BUILD/
