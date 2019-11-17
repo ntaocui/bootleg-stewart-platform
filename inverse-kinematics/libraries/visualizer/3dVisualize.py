@@ -3,6 +3,9 @@
 #With Serial Input
 #http://www.toptechboy.com/tutorial/python-with-arduino-lesson-11-plotting-and-graphing-live-data-from-arduino-with-matplotlib/
 
+#Add 3d surface plot to 3d scatter
+# https://stackoverflow.com/questions/17367558/plot-a-3d-surface-from-x-y-z-scatter-data-in-python
+
 import random
 import time
 import serial
@@ -39,5 +42,8 @@ ax.set_ylim3d(-255, 255)
 ax.set_zlim3d(-255, 255)
 
 # Creating the Animation object
-ani = animation.FuncAnimation(fig, update_lines, frames=200, interval=50, blit=False)
+ani = animation.FuncAnimation(fig, update_lines, frames=100, interval=50, repeat=False, blit=False)
+
+
+ax.plot_surface(X, Y, Z)
 plt.show()
