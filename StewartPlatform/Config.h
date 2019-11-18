@@ -2,9 +2,9 @@
 #define _CONFIG_H
 
 /* Position of servos mounted in inverse direction */
-#define INVERSE_SERVO_1 0
-#define INVERSE_SERVO_2 2
-#define INVERSE_SERVO_3 4
+#define INVERSE_SERVO_1 1
+#define INVERSE_SERVO_2 3
+#define INVERSE_SERVO_3 5
 
 /* Multiplier used to convert radian to pulses in us */
 #define SERVO_MULT (180.0 / PI)

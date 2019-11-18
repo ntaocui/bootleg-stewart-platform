@@ -3,28 +3,40 @@
 #include "PlatformHandler.h"
 #include "StewartPlatformModel.h"
 
-
+const int trigPin = A0;
+const int echoPin = A1;
 
 PlatformHandler platform;
+point_t translation;
+point_t rotation;
 
 void setup() {
-  Serial.begin(9600);
-  // put your setup code here, to run once:
+  Serial.begin(115200);
+  // setup ultrasonic pins
+  pinMode(trigPin, OUTPUT);
+  pinMode(echoPin, INPUT);
   platform.calibrateMotors();
- 
+  
 }
 
 void loop() {
   // put your main code here, to run repeatedly:
-  point_t translation;
+
   translation.x = 0;
   translation.y = 0;
   translation.z = 0;
-  point_t rotation;
   rotation.x = 0;
   rotation.y = 0;
   rotation.z = 0;
   platform.goToPosition(translation, rotation);
   delay(5000);
-  Serial.println("");
+  
+  translation.x = 10;
+  translation.y = 0;
+  translation.z = 0;
+  rotation.x = 0.1;
+  rotation.y = 0;
+  rotation.z = 0;
+  platform.goToPosition(translation, rotation);
+  delay(5000);
 }

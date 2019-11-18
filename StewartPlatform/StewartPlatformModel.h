@@ -1,10 +1,6 @@
 #ifndef _STEWARTPLATFORM_H
 #define _STEWARTPLATFORM_H
 
-#ifndef PI
-#define PI 3.14159265359
-#endif
-
 #ifndef degToRad
 #define degToRad(degree) (degree * PI / 180.0)
 #endif
