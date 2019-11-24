@@ -1,5 +1,5 @@
 #include "PlatformHandler.h"
-#include "Ultrasonic.h"
+
 
 PlatformHandler::PlatformHandler(){
 }
@@ -95,7 +95,7 @@ void PlatformHandler::moveMotors(float servosPos[6]){
       _prevXYZ[4] = _prevXYZ[4] + _incrementalXYZ[4];
       _prevXYZ[5] = _prevXYZ[5] + _incrementalXYZ[5];
 
-      float distance = getDistance();
+      float distance = ultrasonicGetDistance();
       delay(20);
       Serial.println(distance);
 //      Serial.print("The z rotation is: ");

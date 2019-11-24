@@ -5,7 +5,7 @@
 
 #include "Point.h"
 #include "StewartPlatformModel.h"
-
+#include "Ultrasonic.h"
 
 class PlatformHandler{
 

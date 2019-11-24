@@ -1,1 +1,1 @@
-float getDistance();
+float ultrasonicGetDistance();

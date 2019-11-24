@@ -4,7 +4,7 @@
 const int trigPin = A0;
 const int echoPin = A1;
 
-float getDistance(){
+float ultrasonicGetDistance(){
   float distance, duration;
   digitalWrite(trigPin, LOW);
   delayMicroseconds(2);
