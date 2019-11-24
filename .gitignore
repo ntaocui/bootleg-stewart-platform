@@ -10,4 +10,5 @@
 
 # ignored folders
 /inverse-kinematics/libraries/visualizer/visualization_env/
+/.vscode/
 BUILD/
