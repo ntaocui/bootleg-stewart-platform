@@ -43,21 +43,6 @@ void PlatformHandler::calibrateMotors() {
 void PlatformHandler::goToPosition(point_t translation, point_t rotation){
   float servosPos[6] = {0};
   _model.getServoPosition(translation, rotation, servosPos);
-  
-//  Serial.println(servosPos[0]);
-//  Serial.println(servosPos[1]);
-//  Serial.println(servosPos[2]);
-//  Serial.println(servosPos[3]);
-//  Serial.println(servosPos[4]);
-//  Serial.println(servosPos[5]);
-
-//  TODO: do this mapping properly, will need to alter calibrations as well
-  _servo[0].write(servosPos[5]);
-  _servo[1].write(servosPos[0]);
-  _servo[2].write(servosPos[1]);
-  _servo[3].write(servosPos[2]);
-  _servo[4].write(servosPos[3]);
-  _servo[5].write(servosPos[4]);
 
   calculateIncrements(translation, rotation, servosPos);
   moveMotors(servosPos);
@@ -111,7 +96,8 @@ void PlatformHandler::moveMotors(float servosPos[6]){
       _prevXYZ[5] = _prevXYZ[5] + _incrementalXYZ[5];
 
       float distance = getDistance();
-//      Serial.println(distance);
+      delay(20);
+      Serial.println(distance);
 //      Serial.print("The z rotation is: ");
 //      Serial.println(_prevXYZ[5]);
 //      Serial.print("The x rotation is: ");

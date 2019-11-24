@@ -31,11 +31,11 @@ void loop() {
   platform.goToPosition(translation, rotation);
   delay(5000);
   
-  translation.x = 10;
+  translation.x = 0;
   translation.y = 0;
   translation.z = 0;
-  rotation.x = 0.1;
-  rotation.y = 0;
+  rotation.x = 0;
+  rotation.y = 0.2;
   rotation.z = 0;
   platform.goToPosition(translation, rotation);
   delay(5000);

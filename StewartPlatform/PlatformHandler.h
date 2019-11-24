@@ -15,6 +15,8 @@ public:
 
   void calibrateMotors();
   void goToPosition(point_t translation, point_t rotation);
+
+ private:
   void moveMotors(float servoPos[6]);
   void calculateIncrements(point_t translation, point_t rotation, float servoPos[6]);
  
