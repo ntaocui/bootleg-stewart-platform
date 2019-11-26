@@ -45,8 +45,11 @@ def update_lines(num):
         pass
     serial_input = ser.readline()
     uni_str = serial_input.decode('utf-8')
+    if len(uni_str.split(' ')) <3 : 
+        print('WRONG')
+        uni_str = '0 0 0'
     pitch, heading, r = uni_str.split(' ')
-    print(pitch, heading, r)
+    # print(pitch, heading, r)
     pitch, heading, r = (math.pi / 2) - float( pitch), float(heading), float(r)
     px, py, pz = polar2cart(r, pitch, heading)
     text.set_text("{:d}: [{:.0f},{:.0f},{:.0f}]".format(num, px, py, pz))  # for debugging
@@ -55,7 +58,7 @@ def update_lines(num):
     z.append(pz)
     graph._offsets3d = (x, y, z)
 
-    if num == NUM_DATA_PTS-1:
+    if num == NUM_DATA_PTS - 1:
         restart()
     return graph,
 
@@ -74,9 +77,9 @@ ax = fig.add_subplot(111, projection="3d")
 graph = ax.scatter(x, y, z, color='orange')
 text = fig.text(0, 1, "TEXT", va='top')  # for debugging
 
-ax.set_xlim3d(-255, 255)
-ax.set_ylim3d(-255, 255)
-ax.set_zlim3d(-255, 255)
+ax.set_xlim3d(-10, 100)
+ax.set_ylim3d(-100, 100)
+ax.set_zlim3d(-50, 50)
 
 # Creating the Animation object
 ani = animation.FuncAnimation(fig, update_lines, frames=NUM_DATA_PTS, interval=50, repeat=False, blit=False)
