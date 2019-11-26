@@ -9,6 +9,7 @@
 # bootleg-steward-platform.uvprojx
 
 # ignored folders
-/inverse-kinematics/libraries/visualizer/visualization_env/
+/Visualizer/visualization_env/
+/Visualizer/vis_env/
 /.vscode/
 BUILD/

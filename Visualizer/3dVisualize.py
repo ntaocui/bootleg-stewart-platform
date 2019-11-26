@@ -20,7 +20,7 @@ from matplotlib import pyplot as plt
 from matplotlib import animation
 from mpl_toolkits.mplot3d import Axes3D
 
-COM_PORT = "COM5"
+COM_PORT = "COM9"
 BAUD_RATE = 115200
 NUM_DATA_PTS = 100
 
