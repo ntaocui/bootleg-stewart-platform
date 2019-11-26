@@ -94,10 +94,13 @@ void PlatformHandler::moveMotors(float servosPos[6]){
       _prevXYZ[3] = _prevXYZ[3] + _incrementalXYZ[3];
       _prevXYZ[4] = _prevXYZ[4] + _incrementalXYZ[4];
       _prevXYZ[5] = _prevXYZ[5] + _incrementalXYZ[5];
-
+      
+      delay(250);
+      
       float distance = ultrasonicGetDistance();
-      delay(20);
-      Serial.println(distance);
+
+      String serialOut = (String)_prevXYZ[4] + " " + (String)_prevXYZ[5] + " " + (String)distance;
+      Serial.println(serialOut);
 //      Serial.print("The z rotation is: ");
 //      Serial.println(_prevXYZ[5]);
 //      Serial.print("The x rotation is: ");

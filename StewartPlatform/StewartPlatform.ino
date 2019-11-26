@@ -22,21 +22,49 @@ void setup() {
 void loop() {
   // put your main code here, to run repeatedly:
 
+//  translation.x = 0;
+//  translation.y = 0;
+//  translation.z = 0;
+//  rotation.x = 0;
+//  rotation.y = 0;
+//  rotation.z = 0;
+//  platform.goToPosition(translation, rotation);
+//  delay(3000);
+  
   translation.x = 0;
   translation.y = 0;
   translation.z = 0;
   rotation.x = 0;
   rotation.y = 0;
-  rotation.z = 0;
+  rotation.z = 0.4;
   platform.goToPosition(translation, rotation);
-  delay(5000);
-  
+  delay(3000);
+
   translation.x = 0;
   translation.y = 0;
-  translation.z = 10;
+  translation.z = 0;
   rotation.x = 0;
   rotation.y = 0;
-  rotation.z = 0;
+  rotation.z = -0.4;
   platform.goToPosition(translation, rotation);
-  delay(5000);
+  delay(3000);
+
+//   translation.x = 0;
+//  translation.y = 0;
+//  translation.z = 0;
+//  rotation.x = 0;
+//  rotation.y = -0.2;
+//  rotation.z = -0.2;
+//  platform.goToPosition(translation, rotation);
+//  delay(3000);
+//
+//     translation.x = 0;
+//  translation.y = 0;
+//  translation.z = 0;
+//  rotation.x = 0;
+//  rotation.y = -0.2;
+//  rotation.z = 0.2;
+//  platform.goToPosition(translation, rotation);
+//  delay(3000);
+  
 }
